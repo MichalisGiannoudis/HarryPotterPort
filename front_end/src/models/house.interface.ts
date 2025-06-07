@@ -4,7 +4,7 @@ import { Trait } from "./trait.interface";
 export interface House {
     id: string;
     name: string;
-    colors: string;
+    houseColours: string;
     founder: string;
     animal: string;
     element: string;
