@@ -1,5 +1,6 @@
 import styles from './homepage.module.css';
 import { useHouses } from '../hooks/useHouses';
+import HouseList from '../components/houseList';
 
 export default function HomePage() {
 
@@ -14,7 +15,8 @@ export default function HomePage() {
   }
 
   return (
-    <div>
+    <div className="container mx-auto p-4">
+      <HouseList houses={houses} />
     </div>
   );
 }
