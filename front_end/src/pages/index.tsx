@@ -1,4 +1,3 @@
-import styles from './homepage.module.css';
 import { useHouses } from '../hooks/useHouses';
 import HouseList from '../components/houseList';
 
