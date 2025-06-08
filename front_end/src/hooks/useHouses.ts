@@ -18,8 +18,12 @@ export const useHouses = () => {
             }
             const data: House[] = await res.json();
             setHouses(data);
-        } catch (err: any) {
-            setError(err.message);
+        } catch (err : unknown) {
+            if (err instanceof Error) {
+                setError(err.message);
+            } else {
+                setError('An unknown error occurred');
+            }
             setHouses([]);
         } finally {
             setFetching(false);
