@@ -1,0 +1,15 @@
+{
+    "name": "House search app",
+    "version": "1.0.0",
+    "description": "House search application with Nextjs frontend and Node.js backend",
+    "scripts": {
+      "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+      "start:backend": "cd back_end && npm run dev",
+      "start:frontend": "cd front_end && npm run dev",
+      "install:all": "npm install && cd back_end && npm install && cd ../front_end && npm install",
+      "cleanup": "rm -rf node_modules && cd back_end && rm -rf node_modules && cd ../front_end && rm -rf node_modules"
+    },
+    "devDependencies": {
+      "concurrently": "^8.2.2"
+    }
+  } 
