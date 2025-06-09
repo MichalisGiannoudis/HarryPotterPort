@@ -17,5 +17,7 @@ export default function HomePage() {
         <SearchInput placeholder={houseSearchLabel} searchValue={searchValue} onSearchChange={handleSearch} />
         {(fetching || searchInProgress) && <SpinnerComponent />}
       </div>
+
+      {(fetching || searchInProgress) && <HouseCardSkeletonGrid />}
   );
 }
