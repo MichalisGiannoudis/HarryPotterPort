@@ -10,13 +10,13 @@ export default function HomePage() {
   const { houses, fetching, error } = useHouses(searchValue);
 
   if (fetching) {
-    return <div style={{ fontFamily: 'Verdana' }}>
+    return <div>
       <SpinnerComponent />
     </div>;
   }
   
   if (error) {
-    return <div style={{ fontFamily: 'Verdana', color: 'red' }}>Error: {error}</div>;
+    return <div className="text-red-500 flex justify-center items-center min-h-screen">Error: {error}</div>;
   }
 
   return (
