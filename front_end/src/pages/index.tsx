@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useHouses } from '@/hooks/useHouses';
 import HouseList from '@/components/houseList';
 import SearchInput from '@/components/searchInput';
+import SpinnerComponent from '@/components/spinnerComponent';
 
 export default function HomePage() {
 
@@ -9,7 +10,9 @@ export default function HomePage() {
   const { houses, fetching, error } = useHouses(searchValue);
 
   if (fetching) {
-    return <div style={{ fontFamily: 'Verdana' }}>Loading...</div>;
+    return <div style={{ fontFamily: 'Verdana' }}>
+      <SpinnerComponent />
+    </div>;
   }
   
   if (error) {
