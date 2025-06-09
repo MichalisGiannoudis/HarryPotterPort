@@ -1,6 +1,12 @@
 import { House } from '@/models/house.interface';
+import SearchInput from './searchInput';
+import { useMemo, useState } from 'react';
+import { useDebounce } from '@/hooks/useDebounce';
 
 const HouseCard = ({ house }: { house: House }) => {
+
+  const [searchValue, setSearchValue] = useState('');
+  const debouncedSearchValue = useDebounce(searchValue, 300); 
 
   const getHouseGradient = (houseColors?: string) => {
     
@@ -19,6 +25,13 @@ const HouseCard = ({ house }: { house: House }) => {
     ? `linear-gradient(to right, ${colors.join(', ')})`
     : 'linear-gradient(to right, white, black)';
   };
+
+  const filteredTraits = useMemo(() => {
+  if (!debouncedSearchValue) return house.traits;
+  return house.traits.filter((trait) =>
+    trait.name.toLowerCase().includes(debouncedSearchValue.toLowerCase())
+  );
+}, [debouncedSearchValue]);
 
   // Function to check if a string is a valid CSS color
   const isValidCSSColor = (color: string) => {
@@ -40,13 +53,9 @@ const HouseCard = ({ house }: { house: House }) => {
         <span className="font-semibold">Founder: </span>
         <span className="font-bold">{house.founder}</span>
       </p>
-      <input
-        type="text"
-        placeholder="Search house traits"
-        className="w-[65%] mb-3 px-3 py-1 border rounded-xl focus:outline-none focus:ring-gray-300 focus:border-gray-300 border-gray-200"
-      />
+      <SearchInput placeholder='Search houses traits' searchValue={searchValue} onSearchChange={setSearchValue}/>
       <div className="flex flex-wrap gap-2">
-        {house.traits.map((trait) => (
+        {filteredTraits.map((trait) => (
           <span key={trait.id} className="bg-gray-800 text-white flex items-center justify-center px-3 rounded-lg text-sm">
             {trait.name}
           </span>
