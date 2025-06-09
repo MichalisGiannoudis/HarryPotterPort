@@ -1,8 +1,10 @@
+const CACHE_URL = process.env.CACHE_URL;
+
 let housesCache = [];
 
 async function fetchHousesData() {
   try {
-    const response = await fetch('https://wizard-world-api.herokuapp.com/houses');
+    const response = await fetch(CACHE_URL);
 
     if (!response.ok) {
       throw new Error(`Failed to fetch data: ${response.status}`);
