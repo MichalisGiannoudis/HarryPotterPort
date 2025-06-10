@@ -85,8 +85,8 @@ Notes:
 
 The application will be available at:
 
-- Frontend: [http://localhost:4200](http://localhost:3000)
-- Backend: [http://localhost:3002](http://localhost:3002)
+- Frontend: [http://localhost:3000](http://localhost:3000)
+- Backend: [http://localhost:3001](http://localhost:3001)
 
 ### Additional Commands
 
