@@ -1,8 +1,12 @@
 # HarryPotterPort
 
-The Next.js app has been deployed via [Vercel](https://harry-potter-port.vercel.app/).
+The Next.js app has been deployed via <a href="https://harry-potter-port.vercel.app/" target="_blank">Vercel</a>
 
-The Node.js server has been deployed via [Render](https://harrypotterport.onrender.com/) (remember that houses are served under `/houses`).
+- Just in case render has taken offline the server side due to inactivity, i have deployed the app using your heroku endpoint here:
+<a href="https://harry-potter-heroku.vercel.app/" target="_blank">https://harry-potter-heroku.vercel.app/</a>
+
+The Node.js server has been deployed via <a href="https://harrypotterport.onrender.com/" target="_blank">Render</a>
+(remember that houses are served under `/houses`).
 
 ## Description
 
