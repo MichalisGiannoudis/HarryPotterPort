@@ -1,5 +1,5 @@
 {
-    "name": "House search app",
+    "name": "House-search-app",
     "version": "1.0.0",
     "description": "House search application with Nextjs frontend and Node.js backend",
     "scripts": {
