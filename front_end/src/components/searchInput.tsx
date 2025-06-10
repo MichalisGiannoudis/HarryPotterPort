@@ -4,7 +4,7 @@ const SearchInput = ({ searchValue, onSearchChange, placeholder, ...rest }: { se
     <input
       type="text"
       placeholder={placeholder}
-      className="w-[65%] mb-3 px-3 py-1 border rounded-xl focus:outline-none focus:ring-gray-300 focus:border-gray-300 border-gray-200"
+      className="min-w-[300px] mb-3 px-3 py-1 border rounded-xl focus:outline-none focus:ring-gray-300 focus:border-gray-300 border-gray-200"
       value={searchValue}
       onChange={(e) => { onSearchChange(e.target.value) }}
       {...rest}

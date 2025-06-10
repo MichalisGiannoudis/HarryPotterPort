@@ -10,12 +10,10 @@ const HouseCard = ({ house, founderLabel, houseTraitSearchLabel }: { house: Hous
 
   const getHouseGradient = (houseColors?: string) => {
 
-    // If no house colors are provided, return a default gradient (white to black)
     if (!houseColors) {
       return 'linear-gradient(to right, white, black)';
     }
 
-    // Split the house colors by "and" and trim whitespace, then validate each color
     const colors = houseColors
       .split(/\s+and\s+/i)
       .map(c => c.trim().toLowerCase());
@@ -31,9 +29,8 @@ const HouseCard = ({ house, founderLabel, houseTraitSearchLabel }: { house: Hous
     return house.traits.filter((trait) =>
       trait.name.toLowerCase().includes(debouncedSearchValue.toLowerCase())
     );
-  }, [debouncedSearchValue]);
+  }, [debouncedSearchValue, house.traits]);
 
-  // Function to check if a string is a valid CSS color
   const isValidCSSColor = (color: string) => {
     const s = new Option().style;
     s.color = color;
