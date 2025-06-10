@@ -1,5 +1,10 @@
 # HarryPotterPort
-Pircel Tech Test
+
+The Next.js app has been deployed via [Vercel](https://harry-potter-port.vercel.app/).
+
+The Node.js server has been deployed via [Render](https://harrypotterport.onrender.com/) (remember that houses are served under `/houses`).
+
+## Description
 
 This is a *mobile-first* app that serves a simple houses list from the Harry potter Universe:
  - view the extended list of the houses and their properties.
