@@ -2,13 +2,16 @@ import { useEffect, useState } from 'react';
 import { useHouses } from '@/hooks/useHouses';
 import HouseList from '@/components/houseList';
 import SearchInput from '@/components/searchInput';
+import HouseCardSkeletonGrid from '@/components/houseCardSkeletonGrid';
+import { useContent } from '@/hooks/useContent';
+import { HouseContent } from '@/models/content.interface';
 import SpinnerComponent from '@/components/spinnerComponent';
 
+const PAGE_ID = 'houses-page'
 
-  const [searchValue, setSearchValue] = useState('');
-  const { houses, fetching, error } = useHouses(searchValue);
 export default function HousesPage() {
 
+  const { houseSearchEmptyResultsLabel, houseSearchLabel, houseSearchErrorLabel, founderLabel, houseTraitSearchLabel } = useContent(PAGE_ID) as HouseContent;
   }
 
   return (
@@ -19,5 +22,10 @@ export default function HousesPage() {
       </div>
 
       {(fetching || searchInProgress) && <HouseCardSkeletonGrid />}
+
+      {error && <div className="text-red-500 flex justify-center items-center min-h-screen">{houseSearchErrorLabel}: {error}</div>}
+
+      {!(fetching || searchInProgress) && !error && <HouseList emptyResultsLabel={houseSearchEmptyResultsLabel} houses={houses} houseCardProps={{ founderLabel, houseTraitSearchLabel }} />}
+    </div >
   );
 }
