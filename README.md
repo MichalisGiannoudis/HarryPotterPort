@@ -1,8 +1,9 @@
 # HarryPotterPort
 
-The Next.js app has been deployed via [Vercel](https://harry-potter-port.vercel.app/){:target="_blank"}.
+The Next.js app has been deployed via <a href="https://harry-potter-port.vercel.app/" target="_blank">Vercel</a>
 
-The Node.js server has been deployed via [Render](https://harrypotterport.onrender.com/){:target="_blank"} (remember that houses are served under `/houses`).
+The Node.js server has been deployed via <a href="https://harrypotterport.onrender.com/" target="_blank">Render</a>
+(remember that houses are served under `/houses`).
 
 ## Description
 
