@@ -42,7 +42,7 @@ exports[`HouseCard renders house information correctly 1`] = `
       </span>
     </p>
     <input
-      class="w-[65%] mb-3 px-3 py-1 border rounded-xl focus:outline-none focus:ring-gray-300 focus:border-gray-300 border-gray-200"
+      class="min-w-[300px] mb-3 px-3 py-1 border rounded-xl focus:outline-none focus:ring-gray-300 focus:border-gray-300 border-gray-200"
       data-testid="house-card-1-trait-search"
       placeholder="house-trait-search-label"
       type="text"

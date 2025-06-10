@@ -52,7 +52,7 @@ export default function HousesPage() {
 
   return (
     <div className="container mx-auto p-4 max-w-[800px] w-fit">
-      <div className='flex gap-4'>       
+      <div className='flex gap-4 w-[384px] lg:w-[768px]'>       
         <SearchInput placeholder={houseSearchLabel} searchValue={searchValue} onSearchChange={handleSearch} />
         {(fetching || searchInProgress) && <SpinnerComponent />}
       </div>
