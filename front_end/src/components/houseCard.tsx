@@ -41,7 +41,7 @@ const HouseCard = ({ house, founderLabel, houseTraitSearchLabel }: { house: Hous
   };
 
   return (
-    <div className="max-w-sm rounded-lg border border-gray-300 shadow-xl bg-white p-4">
+    <div data-testid={`house-card-${house.id}`} className="flex flex-col gap-2 max-w-sm rounded-lg border border-gray-300 shadow-xl bg-white p-4">
       <div className="flex justify-between items-center mb-2">
         <h2 className="text-2xl font-bold font-f">{house.name}</h2>
         <span className="text-md font-semibold">{house.animal}</span>
@@ -53,7 +53,7 @@ const HouseCard = ({ house, founderLabel, houseTraitSearchLabel }: { house: Hous
         <span className="font-semibold">{founderLabel}: </span>
         <span className="font-bold">{house.founder}</span>
       </p>
-      <SearchInput placeholder={houseTraitSearchLabel ?? 'Search...'} searchValue={searchValue} onSearchChange={setSearchValue} />
+      <SearchInput data-testid={`house-card-${house.id}-trait-search`} placeholder={houseTraitSearchLabel ?? 'Search...'} searchValue={searchValue} onSearchChange={setSearchValue} />
       <div className="flex flex-wrap gap-2">
         {filteredTraits.map((trait) => (
           <span key={trait.id} className="bg-gray-800 text-white flex items-center justify-center px-3 rounded-lg text-sm">

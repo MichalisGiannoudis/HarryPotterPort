@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HouseCard renders house information correctly 1`] = `
+<div>
+  <div
+    class="flex flex-col gap-2 max-w-sm rounded-lg border border-gray-300 shadow-xl bg-white p-4"
+    data-testid="house-card-1"
+  >
+    <div
+      class="flex justify-between items-center mb-2"
+    >
+      <h2
+        class="text-2xl font-bold font-f"
+      >
+        Gryffindor
+      </h2>
+      <span
+        class="text-md font-semibold"
+      >
+        Lion
+      </span>
+    </div>
+    <div>
+      <div
+        class="h-5 rounded-md"
+        style="background: linear-gradient(to right, white, black);"
+      />
+    </div>
+    <p
+      class="mb-2"
+    >
+      <span
+        class="font-semibold"
+      >
+        founder-label
+        : 
+      </span>
+      <span
+        class="font-bold"
+      >
+        Godric Gryffindor
+      </span>
+    </p>
+    <input
+      class="w-[65%] mb-3 px-3 py-1 border rounded-xl focus:outline-none focus:ring-gray-300 focus:border-gray-300 border-gray-200"
+      data-testid="house-card-1-trait-search"
+      placeholder="house-trait-search-label"
+      type="text"
+      value=""
+    />
+    <div
+      class="flex flex-wrap gap-2"
+    >
+      <span
+        class="bg-gray-800 text-white flex items-center justify-center px-3 rounded-lg text-sm"
+      >
+        Bravery
+      </span>
+      <span
+        class="bg-gray-800 text-white flex items-center justify-center px-3 rounded-lg text-sm"
+      >
+        Courage
+      </span>
+      <span
+        class="bg-gray-800 text-white flex items-center justify-center px-3 rounded-lg text-sm"
+      >
+        Chivalry
+      </span>
+    </div>
+  </div>
+</div>
+`;
