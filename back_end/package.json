@@ -1,5 +1,5 @@
 {
-  "name": "back_end",
+  "name": "back-end",
   "version": "0.0.1",
   "main": "server.js",
   "scripts": {
@@ -19,5 +19,8 @@
   "devDependencies": {
     "jest": "^29.7.0",
     "nodemon": "^3.1.10"
+  },
+  "engines": {
+    "node": "22.16.0"
   }
 }
