@@ -3,15 +3,6 @@ import '@testing-library/jest-dom';
 import HouseCard from './houseCard';
 import { House } from '@/models/house.interface';
 
-const MOCK_CONTENT = {
-  pageId: 'mock-page',
-  founderLabel: 'founder-label',
-  houseSearchLabel: 'house-search-label',
-  houseSearchEmptyResultsLabel: 'house-empty-result-label',
-  houseSearchErrorLabel: 'error-label',
-  houseTraitSearchLabel: 'house-trait-search-label',
-}
-
 const MOCK_HOUSE_CARD_PROPS = {
   founderLabel: 'founder-label',
   houseTraitSearchLabel: 'house-trait-search-label',
@@ -44,6 +35,7 @@ jest.mock('@/hooks/useDebounce', () => ({
   useDebounce: (value: string) => value,
 }));
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const testRender = (...props: any[]) => render(<HouseCard house={mockHouse}  {...MOCK_HOUSE_CARD_PROPS} {...props} />)
 
 describe('HouseCard', () => {
