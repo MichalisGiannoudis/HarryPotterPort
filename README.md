@@ -10,7 +10,7 @@ The Node.js server has been deployed via <a href="https://harrypotterport.onrend
 
 ## Description
 
-This is a *mobile-first* app that serves a simple houses list from the Harry potter Universe:
+This is a *mobile-first* app that serves a simple houses list from the Harry potter Universe, where the user can:
  - view the extended list of the houses and their properties.
  - search the list using a simple search input field that sends the search query to the backend. The backend responds with a filtered, shorter list of results that match the search criteria.
  - search among the traits of each house.
