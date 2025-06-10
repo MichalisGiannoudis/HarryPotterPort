@@ -1,4 +1,4 @@
-import { useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 import { House } from '@/models/house.interface';
 import { useDebounce } from '@/hooks/useDebounce';
 
@@ -9,13 +9,13 @@ export const useHouses = (searchValue: string = '') => {
     const [fetching, setFetching] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
-    // Use the custom hook to debounce the search value for 300 milliseconds
-    const debouncedSearchValue = useDebounce(searchValue, 300); 
+    const debouncedSearchValue = useDebounce(searchValue, 300);
 
-    useEffect( () => {
-    
+    useEffect(() => {
+        const controller = new AbortController();
+        console.log('New request initiated for:', debouncedSearchValue);
+        
         const fetchHouses = async () => {
-
             setFetching(true);
             setError(null);
 
@@ -23,21 +23,24 @@ export const useHouses = (searchValue: string = '') => {
                 const queryParam = debouncedSearchValue
                     ? `?name=${debouncedSearchValue}`
                     : '';
-                const res = await fetch(`${API_URL}/houses${queryParam}`);
-                
+                const res = await fetch(`${API_URL}/houses${queryParam}`, { signal: controller.signal });
+
                 if (!res.ok) {
                     throw new Error('Failed to fetch houses');
                 }
                 const data: House[] = await res.json();
-
                 setHouses(data);
-            } catch (err : unknown) {
+            } catch (err: unknown) {
                 if (err instanceof Error) {
+                    if (err.name === 'AbortError') {
+                        console.log('Request was aborted for:', debouncedSearchValue);
+                        return;
+                    }
                     setError(err.message);
                 } else {
                     setError('An unknown error occurred');
                 }
-                
+
                 setHouses([]);
             } finally {
                 setFetching(false);
@@ -45,6 +48,11 @@ export const useHouses = (searchValue: string = '') => {
         };
 
         fetchHouses();
+
+        return () => {
+            console.log('Cleaning up request for:', debouncedSearchValue);
+            controller.abort();
+        };
     }, [debouncedSearchValue]);
 
     return { houses, fetching, error };
