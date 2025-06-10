@@ -1,13 +1,13 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useHouses } from '@/hooks/useHouses';
 import HouseList from '@/components/houseList';
 import SearchInput from '@/components/searchInput';
 import SpinnerComponent from '@/components/spinnerComponent';
 
-export default function HomePage() {
 
   const [searchValue, setSearchValue] = useState('');
   const { houses, fetching, error } = useHouses(searchValue);
+export default function HousesPage() {
 
   }
 
